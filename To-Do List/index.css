@@ -12,18 +12,19 @@
 }
 .todo{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
     width: 30rem;
     max-width: 100rem;
     margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     padding: 30px;
-    border-style: dashed;
-    flex-direction: column;
     background-color: white;
     border-radius: 10px;
-    text-align: center;
+    
     
 }       
 .todo h2{
@@ -53,17 +54,20 @@
     font-size: 20px;
     padding: 20px;
 }
+
 #add{
-    flex:1;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: aqua;
 }
 
-
-
-
-.li-container{
-
+#taskList li{
+    margin-top: 20px;
+    border-style: dotted;
+    list-style: none;
+    padding: 10px;
 }
 
-li{
-    
-}
