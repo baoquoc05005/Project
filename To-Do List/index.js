@@ -7,8 +7,13 @@ function addItem(event){
     }
     else{
         let li = document.createElement('li');
-        li.innerHTML = input.value; 
+        li.innerHTML = `${input.value}         <button onclick="removeItem(event)">Remove</button>`;
         tasklist.appendChild(li);
         input.value = '';
     }
+}
+
+function removeItem(event) {
+    let li = event.target.parentElement;
+    tasklist.removeChild(li);
 }
