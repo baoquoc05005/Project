@@ -9,6 +9,7 @@ function addItem(event){
         let li = document.createElement('li');
         li.innerHTML = `${input.value}         <button onclick="removeItem(event)">Remove</button>`;
         tasklist.appendChild(li);
+        localStorage.setItem('li', JSON.stringify(score));
         input.value = '';
     }
 }
