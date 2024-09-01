@@ -55,13 +55,18 @@ function updateScore(result) {
     } else if(result === "You Win!") {
         userWin++;
     } 
-
 }
 
-document.querySelectorAll("#btn").forEach(button => {
+function displayScore(){
+    let display = document.querySelector("#score");
+    display.textContent = `Score: ${compWin} | ${userWin}`;
+}
+
+document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", (event) => {
         let playerMove = event.target.value;
         let result = comPare(playerMove);
         updateScore(result);
+        displayScore();
     });
 });
