@@ -1,5 +1,15 @@
 let compWin = 0;
 let userWin = 0;
+function loadScore() {
+    let data = JSON.parse(localStorage.getItem("user"));
+    if (data) {
+        compWin = data.computerWin || 0;
+        userWin = data.user || 0;
+    }
+}
+
+loadScore();
+
 
 function computerMove(){
     let randomNumber = Math.floor(Math.random() * 9 + 1);
@@ -49,6 +59,7 @@ function comPare(playerMove){
     return result;
 }
 
+
 function updateScore(result) {
     if(result === "You Lose!") {
         compWin++;
@@ -57,10 +68,14 @@ function updateScore(result) {
     } 
 }
 
+
 function displayScore(){
     let display = document.querySelector("#score");
     display.textContent = `Score: ${compWin} | ${userWin}`;
+    const jsonData = JSON.stringify({computerWin: compWin, user: userWin});
+    localStorage.setItem("user", jsonData);
 }
+
 
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", (event) => {
