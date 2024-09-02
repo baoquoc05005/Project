@@ -10,6 +10,14 @@ function loadScore() {
 
 loadScore();
 
+function resetScore(){
+    let reset = document.querySelector("button");
+    compWin = 0;
+    userWin = 0;
+    displayScore()
+    localStorage.setItem("user", JSON.stringify({computerWin: compWin, user: userWin}))
+}
+
 
 function computerMove(){
     let randomNumber = Math.floor(Math.random() * 9 + 1);
@@ -20,6 +28,7 @@ function computerMove(){
     } else{
         return "Scissor";
     }
+
 }
 
 function comPare(playerMove){
@@ -81,7 +90,11 @@ document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", (event) => {
         let playerMove = event.target.value;
         let result = comPare(playerMove);
-        updateScore(result);
-        displayScore();
+        if (playerMove === "Reset"){
+            resetScore()
+        } else{
+            updateScore(result);
+            displayScore();
+        }
     });
 });
