@@ -89,10 +89,10 @@ function displayScore(){
 document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", (event) => {
         let playerMove = event.target.value;
-        let result = comPare(playerMove);
         if (playerMove === "Reset"){
             resetScore()
         } else{
+            let result = comPare(playerMove);
             updateScore(result);
             displayScore();
         }
