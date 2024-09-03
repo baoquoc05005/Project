@@ -1,0 +1,67 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: bisque;
+}
+.outer-container{
+    border-style:solid;
+    height: 80vh;
+    border-radius: 15px;
+    max-width: 400px;
+    overflow: hidden;
+    background-color:hsl(180, 4%, 31%);
+}
+#display{
+    border-style: solid;
+    width: 100%;
+
+    color: white;
+    background-color: hsl(0, 7%, 12%);
+    font-size: 5rem;
+    text-align: left;
+    
+}
+.key{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+button{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:hsl(0, 1%, 43%);
+    border-style: none;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color:hsl(0, 4%, 53%);
+}
+button:active{
+    background-color:hsl(0, 9%, 66%);
+}
+.operation{
+    background-color: hsl(39, 100%, 50%);
+}
+.operation:hover{
+    background-color: hsl(39, 100%, 70%);
+}
+.operation:active{
+    background-color: hsl(39, 53%, 47%);
+}
+
+
