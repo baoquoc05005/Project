@@ -1,114 +1,140 @@
+/* Reset some default browser styles */
 * {
-    font-family: 'Times New Roman', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
+    font-family: Arial, sans-serif;
 }
 
+/* Main container */
 .container {
-    width: 100%;
-    min-height: 100vh;
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.todo {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 90%;
-    max-width: 30rem;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 50px auto;
     padding: 20px;
-    background-color: white;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
+/* Title styling */
 .todo h2 {
-    color: rgb(95, 65, 65);
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.todo > h2 img {
-    width: 3rem;
-    height: 3rem;
-}
-
-.input-box hr {
+    text-align: center;
+    color: #333;
     margin-bottom: 20px;
+}
+
+.todo h2 img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+/* Input box styling */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-box input {
     width: 100%;
-    max-width: 20rem;
-}
-
-#input {
-    border: none;
-    outline: none;
-    border-radius: 5rem;
-    background-color: rgb(184, 162, 162);
-    margin-top: 20px;
-    width: 100%;
-    max-width: 23rem;
-    height: 2rem;
-    font-size: 1rem;
-    padding: 20px;
-}
-
-#add {
-    border: none;
-    outline: none;
-    border-radius: 2rem;
-    font-size: 1rem;
     padding: 10px;
-    background-color: aqua;
-    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-#taskList li {
-    margin-top: 20px;
-    border-style: dotted;
-    list-style: none;
+.input-box button {
+    width: 48%;
     padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .todo h2 {
-        font-size: 2rem;
-    }
+.input-box button:hover {
+    background-color: #218838;
+}
 
-    #input {
-        font-size: 1rem;
+/* Align the buttons side by side */
+.input-box button + button {
+    margin-left: 4%;
+}
+
+/* Task list styling */
+.list-container {
+    margin-top: 20px;
+}
+
+.list-container ul {
+    list-style-type: none;
+}
+
+.list-container ul li {
+    /* Existing styles */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    /* New styles to handle overflow */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+
+.list-container ul li .close {
+    cursor: pointer;
+    color: #e74c3c;
+    font-weight: bold;
+    padding: 0 10px;
+    transition: color 0.3s;
+}
+
+.list-container ul li .close:hover {
+    color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
         padding: 15px;
     }
 
-    #taskList li {
+    .input-box button {
         padding: 8px;
+    }
+
+    .list-container ul li {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Make buttons stack on top of each other on small screens */
+    .input-box button {
+        width: 100%;
+        margin-left: 0;
     }
 }
 
-@media (max-width: 480px) {
-    .todo h2 {
-        font-size: 1.5rem;
-    }
-
-    #input {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    #add {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    #taskList li {
-        padding: 6px;
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 30px auto;
     }
 }
